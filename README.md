@@ -20,10 +20,13 @@ Ruby, RSpec, Cucumber/Gherkin, Appium, UiAutomator2 e Allure.
 
 ## Execução
 
-Requer emulador Android com o app Webmotors instalado e servidor Appium em execução.
+Inicie o emulador Android com o Webmotors instalado e o servidor Appium antes dos testes mobile.
 
 ```powershell
 bundle install
 $env:CUCUMBER_OUTPUT_ENCODING = "UTF-8"
 bundle exec cucumber --publish-quiet
 bundle exec rspec
+```
+
+A variável de codificação deve ser definida novamente em cada terminal PowerShell novo.

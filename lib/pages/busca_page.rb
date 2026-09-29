@@ -33,13 +33,21 @@ class BuscaPage
     end
   end
   def selecionar_modelo(modelo)
-    linha = @sessao.find_element(
-      :xpath,
+    localizador =
       "//androidx.recyclerview.widget.RecyclerView[@resource-id='hands.android.webmotors:id/lstResult']" \
       "//android.view.ViewGroup[.//android.widget.TextView[@text='#{modelo}']]"
-    )
 
-    linha.click
+    Selenium::WebDriver::Wait.new(
+      timeout: 20,
+      interval: 0.5,
+      ignore: [
+        Selenium::WebDriver::Error::NoSuchElementError,
+        Selenium::WebDriver::Error::StaleElementReferenceError
+      ]
+    ).until do
+      @sessao.find_element(:xpath, localizador).click
+      true
+    end
   end
   def ver_anuncios
     botao = Selenium::WebDriver::Wait.new(timeout: 20).until do

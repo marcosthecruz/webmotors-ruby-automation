@@ -9,6 +9,7 @@ class AppiumSession
         'appium:deviceName' => 'Android',
         'appium:udid' => 'emulator-5554',
         'appium:appPackage' => 'hands.android.webmotors',
+        'appium:appWaitActivity' => '.mvvm.view.home.HomeActivity',
         'appium:ignoreHiddenApiPolicyError' => true,
         'appium:skipDeviceInitialization' => true,
         'appium:noReset' => true
