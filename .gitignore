@@ -1,0 +1,6 @@
+/reports/
+/*.xml
+/.env
+/.env.*
+/.bundle/
+/vendor/bundle/
